@@ -21,7 +21,7 @@ export default function Produk() {
   const [kategoriAktif, setKategoriAktif] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [currentData, setCurrentData] = useState<BarangData[]>([]); // Set tipe data yang sesuai
+  const [currentData, setCurrentData] = useState<BarangData[]>([]);
   const totalPages = Math.ceil(data.length / items_page_limit);
   const [halaman, setHalaman] = useState<boolean>(false);
 
@@ -58,8 +58,32 @@ export default function Produk() {
     return dataToSort;
   };
 
-  const filterType = (kategori: string) => {
+  const filterType = (kategori) => {
     setKategoriAktif(kategori);
+    setPage(1);
+    setHalaman(true);
+  };
+
+  const halamandua = () => {
+    setPage(2);
+    window.location.href = "#awd";
+  };
+
+  const formatHarganya = (harga) => {
+    if (typeof harga === "number") {
+      return harga.toLocaleString("id-ID");
+    }
+    return harga;
+  };
+
+  const handleSortChange = (e) => {
+    setSortOrder(e.target.value);
+    setPage(1);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setPage(1);
   };
 
   return (
