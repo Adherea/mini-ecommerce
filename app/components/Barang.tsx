@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React from "react";
 
-// Definisikan tipe data untuk properti yang diterima oleh komponen Barang
 interface BarangProps {
   id: string;
   gambar: string;
