@@ -58,7 +58,7 @@ export default function Produk() {
     return dataToSort;
   };
 
-  const filterType = (kategori) => {
+  const filterType = (kategori: string) => {
     setKategoriAktif(kategori);
     setPage(1);
     setHalaman(true);
@@ -69,19 +69,19 @@ export default function Produk() {
     window.location.href = "#awd";
   };
 
-  const formatHarganya = (harga) => {
+  const formatHarganya = (harga: number | string) => {
     if (typeof harga === "number") {
       return harga.toLocaleString("id-ID");
     }
     return harga;
   };
 
-  const handleSortChange = (e) => {
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOrder(e.target.value);
     setPage(1);
   };
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     setPage(1);
   };
