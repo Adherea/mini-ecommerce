@@ -12,27 +12,14 @@ interface BarangProps {
 
 export default function Barang({ id, gambar, kategori, nama, harga }: BarangProps) {
   return (
-    <section className="rounded-md shadow-lg w-fit">
-      <div className="relative overflow-hidden" style={{ width: "250px", height: "250px" }}>
-        <Image
-          className={`transition-opacity duration-300 ease-in-out rounded-tl-xl rounded-tr-xl`}
-          style={{
-            transition: "opacity 0.3s ease-in-out",
-            objectFit: "cover",
-            objectPosition: "center",
-            width: "100%",
-            height: "100%",
-          }}
-          src={gambar}
-          width={950}
-          height={250}
-          alt="produk"
-        />
+    <section className="rounded-md shadow-lg w-full max-w-sm mx-auto">
+      <div className="relative overflow-hidden rounded-tl-xl rounded-tr-xl w-full aspect-square">
+        <Image className="transition-opacity duration-300 ease-in-out object-cover" src={gambar} alt="produk" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+        <div className="absolute bottom-0 left-0 bg-black/50 text-white px-3 py-1 rounded-tr-lg">Rp {harga}</div>
       </div>
       <div className="px-5 py-3 rounded-bl-xl rounded-br-xl">
-        <h1 className="pt-5">{nama}</h1>
-        <p className="py-2">Kategori: {kategori}</p>
-        <h5 className="font-bold">Rp {harga}</h5>
+        <h1 className="pt-5 text-sm md:text-base">{nama}</h1>
+        <p className="py-2 text-xs md:text-base font-bold">Kategori: {kategori}</p>
       </div>
     </section>
   );

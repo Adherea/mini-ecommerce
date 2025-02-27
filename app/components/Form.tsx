@@ -7,7 +7,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 function Form() {
   const nowa = () => {
-    window.location.href = "https://wa.me/6281273790314";
+    window.location.href = "https://wa.me/6285227817868";
   };
 
   return (

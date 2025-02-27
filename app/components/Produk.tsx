@@ -88,48 +88,54 @@ export default function Produk() {
 
   return (
     <section className="max-w-7xl mx-auto">
-      <Search searchQuery={searchQuery} handleSearchChange={handleSearchChange} />
+      <div className="px-5 md:py-3 py-5 lg:py-2">
+        <Search searchQuery={searchQuery} handleSearchChange={handleSearchChange} />
+      </div>
 
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex gap-3 px-5 flex-col lg:flex-row lg:items-center w-full md:w-fit ">
           <button
             onClick={() => {
               setKategoriAktif(null);
               setPage(1);
               setHalaman(false);
             }}
-            className="bg-[#0451A5] text-white font-bold rounded-md py-2 px-4 hover:bg-gray-800"
+            className="bg-[#0451A5]  md:w-fit text-white font-bold rounded-md py-2 px-4 hover:bg-gray-800"
           >
-            <FontAwesomeIcon icon={faBars} /> Semua Produk
+            <div className="flex items-center gap-1 ">
+              <FontAwesomeIcon icon={faBars} /> Semua<span className="hidden md:inline"> Produk</span>
+            </div>
           </button>
-          <div className="flex items-center gap-2 py-6">
-            <button className="border rounded-full border-[#6EC1E4] px-4 hover:bg-[#6EC1E4] hover:text-white duration-300" onClick={() => filterType("ranjang")}>
+          <div>
+            <div className="py-4 md:py-4" id="awd">
+              <select name="" id="" onChange={handleSortChange}>
+                <option value="">urutkan menu yang terbaru</option>
+                <option value="">urutkan berdasarkan tren</option>
+                <option value="">urutkan berdasarkan rata rata rating</option>
+                <option value="asc">urutkan dari termurah</option>
+                <option value="desc">urutkan dari termahal</option>
+              </select>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row lg:gap-2 lg:py-6 gap-2 ">
+            <button className="border rounded-full border-[#6EC1E4] py-1 px-4 hover:bg-[#6EC1E4] hover:text-white duration-300" onClick={() => filterType("ranjang")}>
               Ranjang
             </button>
-            <button className="border rounded-full border-[#6EC1E4] px-4 hover:bg-[#6EC1E4] hover:text-white duration-300" onClick={() => filterType("lemari")}>
+            <button className="border rounded-full border-[#6EC1E4] py-1 px-4 hover:bg-[#6EC1E4] hover:text-white duration-300" onClick={() => filterType("lemari")}>
               Lemari
             </button>
-            <button className="border rounded-full border-[#6EC1E4] px-4 hover:bg-[#6EC1E4] hover:text-white duration-300" onClick={() => filterType("dapur")}>
+            <button className="border rounded-full border-[#6EC1E4] py-1 px-4 hover:bg-[#6EC1E4] hover:text-white duration-300" onClick={() => filterType("dapur")}>
               Dapur
             </button>
 
-            <button className="border rounded-full border-[#6EC1E4] px-4 hover:bg-[#6EC1E4] hover:text-white duration-300" onClick={() => filterType("tamu")}>
+            <button className="border rounded-full border-[#6EC1E4] py-1 px-4 hover:bg-[#6EC1E4] hover:text-white duration-300" onClick={() => filterType("tamu")}>
               Tamu
             </button>
           </div>
         </div>
-        <div className="" id="awd">
-          <select name="" id="" onChange={handleSortChange}>
-            <option value="">urutkan menu yang terbaru</option>
-            <option value="">urutkan berdasarkan tren</option>
-            <option value="">urutkan berdasarkan rata rata rating</option>
-            <option value="asc">urutkan dari termurah</option>
-            <option value="desc">urutkan dari termahal</option>
-          </select>
-        </div>
       </div>
-      <div className="py-16">
-        <div className="grid grid-cols-5 gap-7">
+      <div className="py-16 px-5 md:px-5">
+        <div className="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3  gap-5">
           {currentData.map((x) => (
             <Barang key={x.id} id={x.id} gambar={x.gambar} kategori={x.kategori} nama={x.nama} harga={formatHarganya(x.harga)} />
           ))}

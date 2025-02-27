@@ -11,15 +11,15 @@ import dua from "../../public/2.png";
 function Footer() {
   return (
     <>
-      <footer className="bg-[#437DBB] py-8 ">
+      <footer className="bg-[#437DBB] py-8 px-5 text-xs md:text-base">
         <div className="max-w-7xl mx-auto ">
-          <div className="grid grid-cols-4 gap-7">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-7">
             <div>
               <div className="">
                 <Image src={logo} width={300} height={300} alt="logo" />
                 <h1>PT. Industri Furniture Indonesia</h1>
               </div>
-              <div className="text-white py-5">
+              <div className="text-white py-5 leading-7">
                 <p>
                   <FontAwesomeIcon icon={faGlobe} /> Jl. Kampung Baru No. 89 RT. 02 RW. 02 Singabangsa, Kec. Tenjo, Kab. Bogor, Jawa Barat 16370.
                 </p>
@@ -31,11 +31,8 @@ function Footer() {
                 </p>
               </div>
             </div>
-            <div className="px-10">
-              <div className="">
-                <h1>Usefull Links</h1>
-              </div>
-              <div className="text-white py-5 flex flex-col">
+            <div className="lg:pt-20">
+              <div className="text-white py-5 flex flex-col gap-2">
                 <a>
                   <FontAwesomeIcon icon={faBuilding} /> Tentang Kami
                 </a>
@@ -56,11 +53,8 @@ function Footer() {
                 </a>
               </div>
             </div>
-            <div>
-              <div className="">
-                <h1>Usefull Links</h1>
-              </div>
-              <div className="text-white py-5 flex flex-col">
+            <div className="lg:pt-20">
+              <div className="text-white py-5 flex flex-col gap-2">
                 <a>
                   <FontAwesomeIcon icon={faBuilding} /> Dining Set
                 </a>
@@ -80,7 +74,7 @@ function Footer() {
             </div>
             <div>
               <div className="">
-                <h1>Tetap Terhubung</h1>
+                <h1 className="text-white">Tetap Terhubung sama kita : </h1>
                 <div className="flex items-center gap-3 py-3">
                   <FontAwesomeIcon icon={faPhone} className="bg-green-500 text-white p-2 rounded-full" />
                   <FontAwesomeIcon icon={faFacebook} className="bg-blue-900 text-white p-2 rounded-full" />
@@ -98,9 +92,7 @@ function Footer() {
         </div>
       </footer>
       <div className="bg-white py-10">
-        <h1 className="text-center mt-11">
-          Copyright © 2024 PT. Industri Furniture Indonesia | Website developed by <span className="text-[#6AB6D6] ">Weborbit</span> .
-        </h1>
+        <h1 className="text-center mt-11 text-xs md:text-base">Copyright © 2024 All right reserved.</h1>
       </div>
     </>
   );
